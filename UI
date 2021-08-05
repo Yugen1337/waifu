@@ -1,0 +1,21 @@
+--start
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local colors = {
+    SchemeColor = Color3.fromRGB(151, 82, 255),
+    Background = Color3.fromRGB(20, 20, 20),
+    Header = Color3.fromRGB(20, 20, 20),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(40, 40, 40)
+}
+local Window = Library.CreateLib("Blood Samurai 2 - Shāshǒu", colors)
+local Tab1 = Window:NewTab("Main")
+local Tab2 = Window:NewTab("Info")
+local Section2 = Tab2:NewSection("GUI Customization")
+
+Section2:NewKeybind("Toggle GUI", "Toggles GUI", Enum.KeyCode.End, function()
+	Library:ToggleUI()
+end)
+
+Section2:NewColorPicker("Theme", "Theme", color, function(color3)
+    Library:ChangeColor("SchemeColor", color3)
+end)
